@@ -32,6 +32,11 @@ module Halo
       def set_http_headers(http_headers = {})
         http_headers.merge!(DEFAULT_HEADERS)
         headers(http_headers)
+      end
+      
+      def get_game_metadata
+        game_metadata_uri = "game/metadata/#{@token}"        
+        self.class.get(@api_url + game_metadata_uri)        
       end      
     end
   end

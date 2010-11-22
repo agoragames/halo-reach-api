@@ -32,5 +32,17 @@ class TestHaloReachApi < Test::Unit::TestCase
     halo_reach_api.expects(:headers).at_least_once
     
     halo_reach_api.set_http_headers({'Accept' => 'application/json'})
-  end  
+  end
+  
+  def test_get_game_metadata
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/game/metadata/XXX', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_game_metadata.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.get_game_metadata    
+    
+    assert_equal 30, halo_reach_api_response['Data']['AllMapsById'].size
+  end
 end
