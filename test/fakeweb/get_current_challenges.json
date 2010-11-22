@@ -1,0 +1,34 @@
+{ "Daily" : [ { "Credits" : 1000,
+        "Description" : "Kill 100 enemies in multiplayer Matchmaking.",
+        "ExpirationDate" : "/Date(1290510000000-0800)/",
+        "IsWeeklyChallenge" : false,
+        "Name" : "Gunslinger"
+      },
+      { "Credits" : 1000,
+        "Description" : "Earn 20 assists today in multiplayer Matchmaking.",
+        "ExpirationDate" : "/Date(1290510000000-0800)/",
+        "IsWeeklyChallenge" : false,
+        "Name" : "Pass the Rock"
+      },
+      { "Credits" : 1400,
+        "Description" : "Complete a Campaign mission on Heroic with Cloud and Famine on.",
+        "ExpirationDate" : "/Date(1290510000000-0800)/",
+        "IsWeeklyChallenge" : false,
+        "Name" : "Foggy Notion"
+      },
+      { "Credits" : 1800,
+        "Description" : "Kill 250 Grunts in Firefight Matchmaking.",
+        "ExpirationDate" : "/Date(1290510000000-0800)/",
+        "IsWeeklyChallenge" : false,
+        "Name" : "A Satisfied Thirst"
+      }
+    ],
+  "Weekly" : [ { "Credits" : 16000,
+        "Description" : "Complete 16 Daily Challenges this week.",
+        "ExpirationDate" : "/Date(1291028400000-0800)/",
+        "IsWeeklyChallenge" : true,
+        "Name" : "Dedication/Time"
+      } ],
+  "reason" : "Okay",
+  "status" : 0
+}

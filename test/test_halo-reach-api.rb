@@ -45,4 +45,29 @@ class TestHaloReachApi < Test::Unit::TestCase
     
     assert_equal 30, halo_reach_api_response['Data']['AllMapsById'].size
   end
+
+  def test_get_current_challenges
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/game/challenges/XXX', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_current_challenges.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.get_current_challenges    
+    
+    assert_equal 1, halo_reach_api_response['Weekly'].size
+    assert_equal 4, halo_reach_api_response['Daily'].size
+  end
+  
+  def test_get_game_history
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/player/gamehistory/XXX/MajorNelson/Unknown/0', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_game_history.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.get_game_history('MajorNelson')
+    
+    assert_equal 25, halo_reach_api_response['RecentGames'].size
+  end
 end
