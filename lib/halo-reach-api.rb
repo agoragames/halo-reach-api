@@ -44,6 +44,11 @@ module Halo
         self.class.get(@api_url + current_challenges_uri)        
       end
       
+      def get_game_details(game_id)
+        get_game_details_uri = "game/details/#{@token}/#{game_id}"
+        self.class.get(@api_url + get_game_details_uri)        
+      end
+      
       def get_game_history(gamertag, variant_class = 'Unknown', ipage = 0)
         get_game_history_uri = "player/gamehistory/#{@token}/#{gamertag}/#{variant_class}/#{ipage}"
         self.class.get(@api_url + get_game_history_uri)        

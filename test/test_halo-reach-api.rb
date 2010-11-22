@@ -70,4 +70,16 @@ class TestHaloReachApi < Test::Unit::TestCase
     
     assert_equal 25, halo_reach_api_response['RecentGames'].size
   end
+  
+  def test_get_game_details
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/game/details/XXX/666', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_game_details.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.get_game_details(666)
+    
+    assert_equal 666, halo_reach_api_response['GameDetails']['GameId']
+  end  
 end
