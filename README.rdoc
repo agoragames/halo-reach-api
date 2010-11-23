@@ -44,8 +44,9 @@ Q: Dates are funky and not parsed as dates. For example:
      "Name" : "Pass the Rock"
      },
   
-A: Yes they are funky. Yes. They. Are. I'm considering how I would actually parse that out. I may write a helper method on the API class to take a date like that 
-and parse it into something useable. Or you can submit a patch for that?!
+A: Yes they are funky. Yes. They. Are. You can now parse them out with the Halo::Reach::Util class.
+
+  >> parsed_time, parsed_timezone = Halo::Reach::Util::parse_timestamp(api_timestamp)
  
 == Contributing to halo-reach-api
  
