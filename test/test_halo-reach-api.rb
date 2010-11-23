@@ -106,4 +106,16 @@ class TestHaloReachApi < Test::Unit::TestCase
     
     assert_not_nil halo_reach_api_response['StatisticsByPlaylist']
   end  
+
+  def test_get_player_details_with_no_stats
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/player/details/nostats/XXX/foobar', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_player_details_with_no_stats.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.get_player_details_with_no_stats('foobar')
+    
+    assert_equal 'None', halo_reach_api_response['Player']['CampaignProgressCoop']
+  end  
 end

@@ -63,6 +63,11 @@ module Halo
         get_player_details_with_stats_by_playlist_uri = "player/details/byplaylist/#{@token}/#{gamertag}"
         self.class.get(@api_url + get_player_details_with_stats_by_playlist_uri)        
       end
+      
+      def get_player_details_with_no_stats(gamertag)
+        get_player_details_with_no_stats_uri = "player/details/nostats/#{@token}/#{gamertag}"
+        self.class.get(@api_url + get_player_details_with_no_stats_uri)        
+      end
     end
   end
 end
