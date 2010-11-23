@@ -74,6 +74,11 @@ module Halo
         get_player_file_share_uri = "file/share/#{@token}/#{URI.escape(gamertag)}"
         self.class.get(@api_url + get_player_file_share_uri)        
       end
+      
+      def get_file_details(file_id)
+        get_file_details_uri = "file/details/#{@token}/#{file_id}"
+        self.class.get(@api_url + get_file_details_uri)                
+      end
     end
   end
 end
