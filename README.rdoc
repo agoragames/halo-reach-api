@@ -1,6 +1,27 @@
 = Halo::Reach::API
 
+Ruby gem for interacting with the Halo:Reach API
 
+Official: http://www.bungie.net/fanclub/statsapi/Group/Resources/Article.aspx?cid=545064
+Unofficial wiki: http://www.haloreachapi.net/wiki/Available_methods
+
+== Requirements
+
+* HTTParty
+* JSON
+* FakeWeb (testing)
+* Mocha (testing)
+
+== Install
+
+* sudo gem install halo-reach-api
+
+== Example
+
+  >> require 'halo-reach-api'
+  => true
+  >> halo_reach_api = Halo::Reach::API.new('xxx') # An API key will cost you 750 MS points/year for your application
+  => #<Halo::Reach::API:0x1015ec2c8 @token="xxx", @api_url="http://www.bungie.net/api/reach/reachapijson.svc/">
 
 == Contributing to halo-reach-api
  
