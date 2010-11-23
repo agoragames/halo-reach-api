@@ -1,5 +1,6 @@
 require 'httparty'
 require 'json'
+require 'uri'
 
 module Halo
   module Reach
@@ -50,23 +51,28 @@ module Halo
       end
       
       def get_game_history(gamertag, variant_class = 'Unknown', ipage = 0)
-        get_game_history_uri = "player/gamehistory/#{@token}/#{gamertag}/#{variant_class}/#{ipage}"
+        get_game_history_uri = "player/gamehistory/#{@token}/#{URI.escape(gamertag)}/#{variant_class}/#{ipage}"
         self.class.get(@api_url + get_game_history_uri)        
       end
       
       def get_player_details_with_stats_by_map(gamertag)
-        get_player_details_with_stats_by_map_uri = "player/details/bymap/#{@token}/#{gamertag}"
+        get_player_details_with_stats_by_map_uri = "player/details/bymap/#{@token}/#{URI.escape(gamertag)}"
         self.class.get(@api_url + get_player_details_with_stats_by_map_uri)        
       end
 
       def get_player_details_with_stats_by_playlist(gamertag)
-        get_player_details_with_stats_by_playlist_uri = "player/details/byplaylist/#{@token}/#{gamertag}"
+        get_player_details_with_stats_by_playlist_uri = "player/details/byplaylist/#{@token}/#{URI.escape(gamertag)}"
         self.class.get(@api_url + get_player_details_with_stats_by_playlist_uri)        
       end
       
       def get_player_details_with_no_stats(gamertag)
-        get_player_details_with_no_stats_uri = "player/details/nostats/#{@token}/#{gamertag}"
+        get_player_details_with_no_stats_uri = "player/details/nostats/#{@token}/#{URI.escape(gamertag)}"
         self.class.get(@api_url + get_player_details_with_no_stats_uri)        
+      end
+      
+      def get_player_file_share(gamertag)
+        get_player_file_share_uri = "file/share/#{@token}/#{URI.escape(gamertag)}"
+        self.class.get(@api_url + get_player_file_share_uri)        
       end
     end
   end

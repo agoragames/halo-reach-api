@@ -118,4 +118,16 @@ class TestHaloReachApi < Test::Unit::TestCase
     
     assert_equal 'None', halo_reach_api_response['Player']['CampaignProgressCoop']
   end  
+
+  def test_get_player_file_share
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/file/share/XXX/Gamertag', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_player_file_share.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.get_player_file_share('Gamertag')
+    
+    assert_equal 3, halo_reach_api_response['Files'].size
+  end  
 end
