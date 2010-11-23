@@ -34,6 +34,18 @@ A: You must be a Bungie Pro subscriber. http://www.haloreachapi.net/wiki/API_key
 Q: Can I have your API key?
 
 A: No. You can subscribe to Bungie Pro and generate an API key for your application.
+
+Q: Dates are funky and not parsed as dates. For example:
+
+	>> { "Credits" : 1000,
+     "Description" : "Earn 20 assists today in multiplayer Matchmaking.",
+     "ExpirationDate" : "/Date(1290510000000-0800)/",
+     "IsWeeklyChallenge" : false,
+     "Name" : "Pass the Rock"
+     },
+  
+A: Yes they are funky. Yes. They. Are. I'm considering how I would actually parse that out. I may write a helper method on the API class to take a date like that 
+and parse it into something useable. Or you can submit a patch for that?!
  
 == Contributing to halo-reach-api
  
