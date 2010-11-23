@@ -89,6 +89,11 @@ module Halo
         get_player_file_sets_uri = "file/sets/#{@token}/#{URI.escape(gamertag)}"
         self.class.get(@api_url + get_player_file_sets_uri)        
       end      
+
+      def get_player_file_set_files(gamertag, file_set_id)
+        get_player_file_set_files_uri = "file/sets/files/#{@token}/#{URI.escape(gamertag)}/#{file_set_id}"
+        self.class.get(@api_url + get_player_file_set_files_uri)        
+      end      
     end
   end
 end
