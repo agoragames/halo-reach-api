@@ -53,6 +53,11 @@ module Halo
         get_game_history_uri = "player/gamehistory/#{@token}/#{gamertag}/#{variant_class}/#{ipage}"
         self.class.get(@api_url + get_game_history_uri)        
       end
+      
+      def get_player_details_with_stats_by_map(gamertag)
+        get_player_details_with_stats_by_map_uri = "player/details/bymap/#{@token}/#{gamertag}"
+        self.class.get(@api_url + get_player_details_with_stats_by_map_uri)        
+      end
     end
   end
 end
