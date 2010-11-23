@@ -2,8 +2,8 @@
 
 Ruby gem for interacting with the Halo:Reach API
 
-Official: http://www.bungie.net/fanclub/statsapi/Group/Resources/Article.aspx?cid=545064
-Unofficial wiki: http://www.haloreachapi.net/wiki/Available_methods
+* Official: http://www.bungie.net/fanclub/statsapi/Group/Resources/Article.aspx?cid=545064
+* Unofficial wiki: http://www.haloreachapi.net/wiki/Available_methods
 
 == Requirements
 
