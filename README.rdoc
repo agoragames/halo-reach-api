@@ -23,6 +23,18 @@ Ruby gem for interacting with the Halo:Reach API
   >> halo_reach_api = Halo::Reach::API.new('xxx') # An API key will cost you 750 MS points/year for your application
   => #<Halo::Reach::API:0x1015ec2c8 @token="xxx", @api_url="http://www.bungie.net/api/reach/reachapijson.svc/">
 
+Look at the unofficial wiki for complete descriptions of the API calls. 
+
+== FAQ
+
+Q: How do I get an API key?
+
+A: You must be a Bungie Pro subscriber. http://www.haloreachapi.net/wiki/API_key
+
+Q: Can I have your API key?
+
+A: No. You can subscribe to Bungie Pro and generate an API key for your application.
+ 
 == Contributing to halo-reach-api
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
