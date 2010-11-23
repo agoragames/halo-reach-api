@@ -13,7 +13,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "halo-reach-api"
-  gem.homepage = "http://github.com/czarneckid/halo-reach-api"
+  gem.homepage = "http://github.com/agoragames/halo-reach-api"
   gem.license = "MIT"
   gem.summary = %Q{Ruby gem for interacting with the Halo:Reach API}
   gem.description = %Q{Ruby gem for interacting with the Halo:Reach API}

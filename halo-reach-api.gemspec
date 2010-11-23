@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{halo-reach-api}
-  s.version = "1.0.0"
+  s.version = "1.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Czarnecki"]
-  s.date = %q{2010-11-22}
+  s.date = %q{2010-11-23}
   s.description = %q{Ruby gem for interacting with the Halo:Reach API}
   s.email = %q{dczarnecki@agoragames.com}
   s.extra_rdoc_files = [
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "halo-reach-api.gemspec",
     "lib/halo-reach-api.rb",
+    "lib/halo-reach-util.rb",
     "test/fakeweb/get_current_challenges.json",
     "test/fakeweb/get_file_details.json",
     "test/fakeweb/get_game_details.json",
@@ -42,16 +43,18 @@ Gem::Specification.new do |s|
     "test/fakeweb/get_player_rendered_videos.json",
     "test/fakeweb/reach_file_search.json",
     "test/helper.rb",
-    "test/test_halo-reach-api.rb"
+    "test/test_halo-reach-api.rb",
+    "test/test_halo-reach-util.rb"
   ]
-  s.homepage = %q{http://github.com/czarneckid/halo-reach-api}
+  s.homepage = %q{http://github.com/agoragames/halo-reach-api}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Ruby gem for interacting with the Halo:Reach API}
   s.test_files = [
     "test/helper.rb",
-    "test/test_halo-reach-api.rb"
+    "test/test_halo-reach-api.rb",
+    "test/test_halo-reach-util.rb"
   ]
 
   if s.respond_to? :specification_version then
