@@ -50,8 +50,8 @@ module Halo
         self.class.get(@api_url + get_game_details_uri)        
       end
       
-      def get_game_history(gamertag, variant_class = 'Unknown', ipage = 0)
-        get_game_history_uri = "player/gamehistory/#{@token}/#{URI.escape(gamertag)}/#{variant_class}/#{ipage}"
+      def get_game_history(gamertag, variant_class = 'Unknown', page = 0)
+        get_game_history_uri = "player/gamehistory/#{@token}/#{URI.escape(gamertag)}/#{variant_class}/#{page}"
         self.class.get(@api_url + get_game_history_uri)        
       end
       
@@ -93,6 +93,11 @@ module Halo
       def get_player_file_set_files(gamertag, file_set_id)
         get_player_file_set_files_uri = "file/sets/files/#{@token}/#{URI.escape(gamertag)}/#{file_set_id}"
         self.class.get(@api_url + get_player_file_set_files_uri)        
+      end      
+
+      def get_player_rendered_videos(gamertag, page = 0)
+        get_player_rendered_videos_uri = "file/videos/#{@token}/#{URI.escape(gamertag)}/#{page}"
+        self.class.get(@api_url + get_player_rendered_videos_uri)        
       end      
     end
   end
