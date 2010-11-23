@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "halo-reach-api.gemspec",
     "lib/halo-reach-api.rb",
     "test/fakeweb/get_current_challenges.json",
     "test/fakeweb/get_file_details.json",
