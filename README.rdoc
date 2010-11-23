@@ -1,6 +1,6 @@
-= halo-reach-api
+= Halo::Reach::API
 
-Description goes here.
+
 
 == Contributing to halo-reach-api
  
@@ -14,6 +14,5 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2010 David Czarnecki. See LICENSE.txt for
-further details.
+Copyright (c) 2010 David Czarnecki. See LICENSE.txt for further details.
 

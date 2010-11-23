@@ -79,6 +79,11 @@ module Halo
         get_file_details_uri = "file/details/#{@token}/#{file_id}"
         self.class.get(@api_url + get_file_details_uri)                
       end
+      
+      def get_player_recent_screenshots(gamertag)
+        get_player_recent_screenshots_uri = "file/screenshots/#{@token}/#{URI.escape(gamertag)}"
+        self.class.get(@api_url + get_player_recent_screenshots_uri)        
+      end      
     end
   end
 end

@@ -142,4 +142,16 @@ class TestHaloReachApi < Test::Unit::TestCase
     
     assert_equal 3, halo_reach_api_response['Files'][0]['DownloadCount']
   end   
+
+  def test_get_player_recent_screenshots
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/file/screenshots/XXX/Gamertag', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_player_recent_screenshots.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.get_player_recent_screenshots('Gamertag')
+    
+    assert_equal 5, halo_reach_api_response['Files'].size
+  end
 end
