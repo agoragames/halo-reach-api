@@ -193,4 +193,16 @@ class TestHaloReachApi < Test::Unit::TestCase
     # FIXME: Need a gamertag with actual rendered videos
     assert_equal 0, halo_reach_api_response['Files'].size
   end
+
+  def test_reach_file_search
+    FakeWeb.register_uri(:get, 
+                         'http://www.bungie.net/api/reach/reachapijson.svc/file/search/XXX/GameClip/null/null/Week/MostDownloads/0', 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'reach_file_search.json'), 
+                         :content_type => "application/json")
+                         
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api_response = halo_reach_api.reach_file_search('GameClip', 'null', 'null', 'Week', 'MostDownloads', nil, 0)
+    
+    assert_equal 25, halo_reach_api_response['Files'].size
+  end
 end

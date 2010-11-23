@@ -98,7 +98,16 @@ module Halo
       def get_player_rendered_videos(gamertag, page = 0)
         get_player_rendered_videos_uri = "file/videos/#{@token}/#{URI.escape(gamertag)}/#{page}"
         self.class.get(@api_url + get_player_rendered_videos_uri)        
-      end      
+      end
+
+      def reach_file_search(file_category, map_filter, engine_filter, date_filter, sort_filter, tags, page = 0)
+        reach_file_search_uri = "file/search/#{@token}/#{file_category}/#{map_filter}/#{engine_filter}/#{date_filter}/#{sort_filter}/#{page}"
+        unless tags.nil?
+          reach_file_search_uri += "?tags=#{URI.escape(tags)}"
+        end
+        
+        self.class.get(@api_url + reach_file_search_uri)        
+      end
     end
   end
 end
