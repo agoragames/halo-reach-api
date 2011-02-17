@@ -66,5 +66,5 @@ A: Yes they are funky. Yes. They. Are. You can now parse them out with the Halo:
 
 == Copyright
 
-Copyright (c) 2010 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2010-2011 David Czarnecki. See LICENSE.txt for further details.
 
