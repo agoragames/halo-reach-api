@@ -1,11 +1,11 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    crack (0.1.6)
+    crack (0.1.8)
     fakeweb (1.2.8)
     git (1.2.5)
-    httparty (0.5.2)
-      crack (= 0.1.6)
+    httparty (0.6.1)
+      crack (= 0.1.8)
     jeweler (1.5.1)
       bundler (~> 1.0.0)
       git (>= 1.2.5)
@@ -22,8 +22,8 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0.0)
   fakeweb
-  httparty
+  httparty (~> 0.6.1)
   jeweler (~> 1.5.1)
-  json
+  json (~> 1.4.6)
   mocha
   rcov

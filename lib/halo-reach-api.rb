@@ -7,7 +7,7 @@ module Halo
     class API
       include HTTParty
 
-      VERSION = '1.0.1'.freeze
+      VERSION = '1.0.2'.freeze
       API_URL = 'http://www.bungie.net/api/reach/reachapijson.svc/'
       
       DEFAULT_HEADERS = {
@@ -33,6 +33,10 @@ module Halo
       def set_http_headers(http_headers = {})
         http_headers.merge!(DEFAULT_HEADERS)
         headers(http_headers)
+      end
+      
+      def set_timeout(timeout)
+        default_timeout(timeout)
       end
       
       def get_game_metadata

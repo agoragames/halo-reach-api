@@ -12,7 +12,7 @@ class TestHaloReachApi < Test::Unit::TestCase
   end
   
   def test_api_version
-    assert_equal '1.0.1', Halo::Reach::API::VERSION
+    assert_equal '1.0.2', Halo::Reach::API::VERSION
   end
   
   def test_can_set_token
@@ -204,5 +204,12 @@ class TestHaloReachApi < Test::Unit::TestCase
     halo_reach_api_response = halo_reach_api.reach_file_search('GameClip', 'null', 'null', 'Week', 'MostDownloads', nil, 0)
     
     assert_equal 25, halo_reach_api_response['Files'].size
+  end
+
+  def test_can_set_timeout
+    halo_reach_api = Halo::Reach::API.new('XXX')
+    halo_reach_api.expects(:default_timeout).at_least_once
+    
+    halo_reach_api.set_timeout(5)
   end
 end

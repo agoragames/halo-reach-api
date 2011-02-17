@@ -47,6 +47,12 @@ Q: Dates are funky and not parsed as dates. For example:
 A: Yes they are funky. Yes. They. Are. You can now parse them out with the Halo::Reach::Util class.
 
   >> parsed_time, parsed_timezone = Halo::Reach::Util::parse_timestamp(api_timestamp)
+
+== Changelog
+
+=== 1.0.2
+
+* Added set_timeout method to set timeout for HTTP requests
  
 == Contributing to halo-reach-api
  

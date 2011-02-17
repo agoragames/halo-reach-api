@@ -8,8 +8,8 @@ group :development do
   gem "rcov", ">= 0"
 end
 
-gem 'httparty'
-gem 'json'
+gem 'httparty', "~> 0.6.1"
+gem 'json', "~> 1.4.6"
 
 group :test do
 	gem 'fakeweb'
