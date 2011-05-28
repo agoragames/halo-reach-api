@@ -1,1 +1,2 @@
-rvm 1.8.7
+rvm --create 1.8.7@halo-reach-api_gem
+rvm --create 1.9.2@halo-reach-api_gem

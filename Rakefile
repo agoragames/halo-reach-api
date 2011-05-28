@@ -40,8 +40,6 @@ Rcov::RcovTask.new do |test|
   test.verbose = true
 end
 
-task :default => :test
-
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
@@ -50,4 +48,10 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "halo-reach-api #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+task :default => :test_rubies
+
+task :test_rubies do
+  system "rvm 1.8.7@halo-reach-api_gem,1.9.2@halo-reach-api_gem rake test"
 end

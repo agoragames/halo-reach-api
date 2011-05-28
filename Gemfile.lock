@@ -6,7 +6,7 @@ GEM
     git (1.2.5)
     httparty (0.6.1)
       crack (= 0.1.8)
-    jeweler (1.5.1)
+    jeweler (1.6.0)
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
@@ -14,7 +14,7 @@ GEM
     mocha (0.9.8)
       rake
     rake (0.8.7)
-    rcov (0.8.1.2.0)
+    rcov (0.9.9)
 
 PLATFORMS
   ruby
@@ -23,7 +23,7 @@ DEPENDENCIES
   bundler (~> 1.0.0)
   fakeweb
   httparty (~> 0.6.1)
-  jeweler (~> 1.5.1)
+  jeweler (~> 1.6.0)
   json (~> 1.4.6)
   mocha
-  rcov
+  rcov (= 0.9.9)
