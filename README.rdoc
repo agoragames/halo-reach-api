@@ -37,7 +37,7 @@ A: No. You can subscribe to Bungie Pro and generate an API key for your applicat
 
 Q: Dates are funky and not parsed as dates. For example:
 
-	>> { "Credits" : 1000,
+     >> { "Credits" : 1000,
      "Description" : "Earn 20 assists today in multiplayer Matchmaking.",
      "ExpirationDate" : "/Date(1290510000000-0800)/",
      "IsWeeklyChallenge" : false,
