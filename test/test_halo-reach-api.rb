@@ -168,7 +168,7 @@ class TestHaloReachApi < Test::Unit::TestCase
     assert_equal 0, halo_reach_api_response['FileSets'].size
   end
 
-  def test_get_player_file_sets
+  def test_get_player_file_sets_with_file_set_id
     FakeWeb.register_uri(:get, 
                          'http://www.bungie.net/api/reach/reachapijson.svc/file/sets/files/XXX/Gamertag/0', 
                          :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_player_file_set_files.json'), 
