@@ -7,7 +7,7 @@ module Halo
     class API
       include HTTParty
 
-      VERSION = '1.0.2'.freeze
+      VERSION = '1.0.3'.freeze
       API_URL = 'http://www.bungie.net/api/reach/reachapijson.svc/'
       
       DEFAULT_HEADERS = {

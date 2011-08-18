@@ -12,7 +12,7 @@ class TestHaloReachApi < Test::Unit::TestCase
   end
   
   def test_api_version
-    assert_equal '1.0.2', Halo::Reach::API::VERSION
+    assert_equal '1.0.3', Halo::Reach::API::VERSION
   end
   
   def test_can_set_token
