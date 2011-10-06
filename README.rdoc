@@ -53,6 +53,8 @@ A: Yes they are funky. Yes. They. Are. You can now parse them out with the Halo:
 === 1.0.4
 
 * Removed explicit version dependencies on supporting development-only libraries
+* Fixed JSON in tests to not be stupid about null values
+* Fixed copy-and-paste errors in tests
 
 === 1.0.3 
 
