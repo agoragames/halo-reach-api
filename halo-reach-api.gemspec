@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{halo-reach-api}
-  s.version = "1.0.3"
+  s.version = "1.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Czarnecki"]
@@ -50,11 +50,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Ruby gem for interacting with the Halo:Reach API}
-  s.test_files = [
-    "test/helper.rb",
-    "test/test_halo-reach-api.rb",
-    "test/test_halo-reach-util.rb"
-  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
