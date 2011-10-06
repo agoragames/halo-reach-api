@@ -98,12 +98,12 @@ class TestHaloReachApi < Test::Unit::TestCase
   def test_get_player_details_with_stats_by_playlist
     FakeWeb.register_uri(:get, 
                          'http://www.bungie.net/api/reach/reachapijson.svc/player/details/byplaylist/XXX/foobar', 
-                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_player_details_with_stats_by_map.json'), 
+                         :body => File.join(File.dirname(__FILE__), 'fakeweb', 'get_player_details_with_stats_by_playlist.json'), 
                          :content_type => "application/json")
                          
     halo_reach_api = Halo::Reach::API.new('XXX')
-    halo_reach_api_response = halo_reach_api.get_player_details_with_stats_by_map('foobar')
-    
+    halo_reach_api_response = halo_reach_api.get_player_details_with_stats_by_playlist('foobar')
+
     assert_not_nil halo_reach_api_response['StatisticsByPlaylist']
   end  
 
