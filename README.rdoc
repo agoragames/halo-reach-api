@@ -50,6 +50,10 @@ A: Yes they are funky. Yes. They. Are. You can now parse them out with the Halo:
 
 == Changelog
 
+=== 1.0.4
+
+* Removed explicit version dependencies on supporting development-only libraries
+
 === 1.0.3 
 
 * Fixed some internal Ruby API deprecation warnings
