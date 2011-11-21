@@ -2,12 +2,12 @@ require 'httparty'
 require 'json'
 require 'cgi'
 
+require 'halo-reach-api-version'
+
 module Halo
   module Reach
     class API
       include HTTParty
-
-      VERSION = '1.0.4'.freeze
       API_URL = 'http://www.bungie.net/api/reach/reachapijson.svc/'
       
       DEFAULT_HEADERS = {

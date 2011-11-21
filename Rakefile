@@ -1,31 +1,7 @@
-require 'rubygems'
 require 'bundler'
-begin
-  Bundler.setup(:default, :development)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
-end
+Bundler::GemHelper.install_tasks
+
 require 'rake'
-
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "halo-reach-api"
-  gem.homepage = "http://github.com/agoragames/halo-reach-api"
-  gem.license = "MIT"
-  gem.summary = %Q{Ruby gem for interacting with the Halo:Reach API}
-  gem.description = %Q{Ruby gem for interacting with the Halo:Reach API}
-  gem.email = "dczarnecki@agoragames.com"
-  gem.authors = ["David Czarnecki"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
-end
-Jeweler::RubygemsDotOrgTasks.new
-
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
@@ -33,25 +9,8 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
-
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "halo-reach-api #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
-
 task :default => :test_rubies
 
 task :test_rubies do
-  system "rvm 1.8.7@halo-reach-api_gem,1.9.2@halo-reach-api_gem rake test"
+  system "rvm 1.8.7@halo-reach-api_gem,1.9.2@halo-reach-api_gem,1.9.3@halo-reach-api_gem do rake test"
 end
