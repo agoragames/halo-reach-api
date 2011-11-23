@@ -2,7 +2,7 @@ require 'httparty'
 require 'json'
 require 'cgi'
 
-require 'halo-reach-api-version'
+require 'version'
 
 module Halo
   module Reach
