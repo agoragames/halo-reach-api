@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5
+
+* Fix escaping with gamertags with spaces
+
 ## 1.0.4
 
 * Removed explicit version dependencies on supporting development-only libraries

@@ -73,7 +73,7 @@ module Halo
       #
       # http://www.haloreachapi.net/wiki/GetGameHistory
       def get_game_history(gamertag, variant_class = 'Unknown', page = 0)
-        get_game_history_uri = "player/gamehistory/#{@token}/#{CGI.escape(gamertag)}/#{variant_class}/#{page}"
+        get_game_history_uri = "player/gamehistory/#{@token}/#{msftize(gamertag)}/#{variant_class}/#{page}"
         self.class.get(@api_url + get_game_history_uri)        
       end
       
@@ -81,7 +81,7 @@ module Halo
       # 
       # http://www.haloreachapi.net/wiki/GetPlayerDetailsWithStatsByMap
       def get_player_details_with_stats_by_map(gamertag)
-        get_player_details_with_stats_by_map_uri = "player/details/bymap/#{@token}/#{CGI.escape(gamertag)}"
+        get_player_details_with_stats_by_map_uri = "player/details/bymap/#{@token}/#{msftize(gamertag)}"
         self.class.get(@api_url + get_player_details_with_stats_by_map_uri)        
       end
 
@@ -89,7 +89,7 @@ module Halo
       #
       # http://www.haloreachapi.net/wiki/GetPlayerDetailsWithStatsByPlaylist
       def get_player_details_with_stats_by_playlist(gamertag)
-        get_player_details_with_stats_by_playlist_uri = "player/details/byplaylist/#{@token}/#{CGI.escape(gamertag)}"
+        get_player_details_with_stats_by_playlist_uri = "player/details/byplaylist/#{@token}/#{msftize(gamertag)}"
         self.class.get(@api_url + get_player_details_with_stats_by_playlist_uri)        
       end
       
@@ -97,7 +97,7 @@ module Halo
       #
       # http://www.haloreachapi.net/wiki/GetPlayerDetailsWithNoStats
       def get_player_details_with_no_stats(gamertag)
-        get_player_details_with_no_stats_uri = "player/details/nostats/#{@token}/#{CGI.escape(gamertag)}"
+        get_player_details_with_no_stats_uri = "player/details/nostats/#{@token}/#{msftize(gamertag)}"
         self.class.get(@api_url + get_player_details_with_no_stats_uri)        
       end
       
@@ -105,7 +105,7 @@ module Halo
       # 
       # http://www.haloreachapi.net/wiki/GetPlayerFileShare
       def get_player_file_share(gamertag)
-        get_player_file_share_uri = "file/share/#{@token}/#{CGI.escape(gamertag)}"
+        get_player_file_share_uri = "file/share/#{@token}/#{msftize(gamertag)}"
         self.class.get(@api_url + get_player_file_share_uri)        
       end
       
@@ -121,7 +121,7 @@ module Halo
       # 
       # http://www.haloreachapi.net/wiki/GetPlayerRecentScreenshots
       def get_player_recent_screenshots(gamertag)
-        get_player_recent_screenshots_uri = "file/screenshots/#{@token}/#{CGI.escape(gamertag)}"
+        get_player_recent_screenshots_uri = "file/screenshots/#{@token}/#{msftize(gamertag)}"
         self.class.get(@api_url + get_player_recent_screenshots_uri)        
       end      
 
@@ -129,7 +129,7 @@ module Halo
       # 
       # http://www.haloreachapi.net/wiki/GetPlayerFileSets
       def get_player_file_sets(gamertag)
-        get_player_file_sets_uri = "file/sets/#{@token}/#{CGI.escape(gamertag)}"
+        get_player_file_sets_uri = "file/sets/#{@token}/#{msftize(gamertag)}"
         self.class.get(@api_url + get_player_file_sets_uri)        
       end      
 
@@ -137,7 +137,7 @@ module Halo
       #
       # http://www.haloreachapi.net/wiki/GetPlayerFileSetFiles
       def get_player_file_set_files(gamertag, file_set_id)
-        get_player_file_set_files_uri = "file/sets/files/#{@token}/#{CGI.escape(gamertag)}/#{file_set_id}"
+        get_player_file_set_files_uri = "file/sets/files/#{@token}/#{msftize(gamertag)}/#{file_set_id}"
         self.class.get(@api_url + get_player_file_set_files_uri)        
       end      
       
@@ -145,7 +145,7 @@ module Halo
       # 
       # http://www.haloreachapi.net/wiki/GetPlayerRenderedVideos
       def get_player_rendered_videos(gamertag, page = 0)
-        get_player_rendered_videos_uri = "file/videos/#{@token}/#{CGI.escape(gamertag)}/#{page}"
+        get_player_rendered_videos_uri = "file/videos/#{@token}/#{msftize(gamertag)}/#{page}"
         self.class.get(@api_url + get_player_rendered_videos_uri)        
       end
       
@@ -159,6 +159,13 @@ module Halo
         end
         
         self.class.get(@api_url + reach_file_search_uri)        
+      end
+      
+      private 
+      
+      # MSFT servers are not able to parse the '+' if doing a straight CGI.escape
+      def msftize(gamertag)
+        gamertag.gsub(' ', '%20')
       end
     end
   end

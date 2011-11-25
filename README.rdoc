@@ -4,6 +4,7 @@ Ruby gem for interacting with the Halo:Reach API
 
 * Official: http://www.bungie.net/fanclub/statsapi/Group/Resources/Article.aspx?cid=545064
 * Unofficial wiki: http://www.haloreachapi.net/wiki/Available_methods
+* You must register with Bungie.net and you can then generate an API key at http://www.bungie.net/Account/reachapikey.aspx
 
 == Requirements
 
@@ -14,13 +15,13 @@ Ruby gem for interacting with the Halo:Reach API
 
 == Install
 
-* sudo gem install halo-reach-api
+* gem install halo-reach-api
 
 == Example
 
   >> require 'halo-reach-api'
   => true
-  >> halo_reach_api = Halo::Reach::API.new('xxx') # An API key will cost you 750 MS points/year for your application
+  >> halo_reach_api = Halo::Reach::API.new('xxx') # Where 'xxx' is your Halo:Reach API Key
   => #<Halo::Reach::API:0x1015ec2c8 @token="xxx", @api_url="http://www.bungie.net/api/reach/reachapijson.svc/">
 
 Look at the unofficial wiki for complete descriptions of the API calls. 
@@ -29,11 +30,7 @@ Look at the unofficial wiki for complete descriptions of the API calls.
 
 Q: How do I get an API key?
 
-A: You must be a Bungie Pro subscriber. http://www.haloreachapi.net/wiki/API_key
-
-Q: Can I have your API key?
-
-A: No. You can subscribe to Bungie Pro and generate an API key for your application.
+A: You must register with Bungie.net and you can then generate an API key at http://www.bungie.net/Account/reachapikey.aspx
 
 Q: Dates are funky and not parsed as dates. For example:
 
