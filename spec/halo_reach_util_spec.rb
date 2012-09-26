@@ -1,19 +1,18 @@
-require 'helper'
+require 'spec_helper'
 
-class TestHaloReachUtil < Test::Unit::TestCase
-
-  def test_can_parse_correctly_formatted_timestamp
+describe Halo::Reach::Util do
+  it 'should be able to parse a correctly formatted timestamp' do
     utc_time = Time.now.utc
     milliseconds_since_epoch = utc_time.to_i * 1000
     timezone = '0500'
     api_timestamp = build_timestamp(milliseconds_since_epoch, timezone)
 
     parsed_time, parsed_timezone = Halo::Reach::Util::parse_timestamp(api_timestamp)
-    assert_equal utc_time.to_s, parsed_time.to_s
-    assert_equal timezone, parsed_timezone
+    utc_time.to_s.should == parsed_time.to_s
+    timezone.should == parsed_timezone
   end
 
-  def test_raise_invalid_timestamp_argument_error_on_malformed_timestamp
+  it 'should raise an ArgumentError on trying to parse a malformed timestamp' do
     invalid_timestamps = [
       nil, # nothing at all
       '', # empty timestamp
@@ -29,11 +28,11 @@ class TestHaloReachUtil < Test::Unit::TestCase
     ]
 
     invalid_timestamps.each do |invalid_timestamp|
-      assert_raises(ArgumentError) do
-        Halo::Reach::Util::parse_timestamp(invalid_timestamp)
-      end
+      expect { Halo::Reach::Util::parse_timestamp(invalid_timestamp) }.to raise_error(ArgumentError)
     end
   end
+
+  private
 
   def build_timestamp(milliseconds_since_epoch, timezone)
     "/Date(#{milliseconds_since_epoch.to_s}-#{timezone.to_s})/"
