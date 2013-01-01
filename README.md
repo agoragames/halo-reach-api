@@ -65,5 +65,5 @@ parsed_time, parsed_timezone = Halo::Reach::Util::parse_timestamp(api_timestamp)
 
 ## Copyright
 
-Copyright (c) 2010-2012 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2010-2013 David Czarnecki. See LICENSE.txt for further details.
 
