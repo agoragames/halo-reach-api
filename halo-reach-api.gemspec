@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/agoragames/halo-reach-api"
   s.summary     = %q{Ruby gem for interacting with the Halo:Reach API}
   s.description = %q{Ruby gem for interacting with the Halo:Reach API}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "halo-reach-api"
 
