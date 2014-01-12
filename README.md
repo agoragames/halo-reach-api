@@ -28,7 +28,7 @@ halo_reach_api = Halo::Reach::API.new('xxx') # Where 'xxx' is your Halo:Reach AP
 => #<Halo::Reach::API:0x1015ec2c8 @token="xxx", @api_url="http://www.bungie.net/api/reach/reachapijson.svc/">
 ```
 
-Look at the unofficial wiki for complete descriptions of the API calls. 
+Look at the unofficial wiki for complete descriptions of the API calls.
 
 ## FAQ
 
@@ -46,7 +46,7 @@ Q: Dates are funky and not parsed as dates. For example:
  "Name" : "Pass the Rock"
  },
 ```
-  
+
 A: Yes they are funky. Yes. They. Are. You can now parse them out with the Halo::Reach::Util class.
 
 ```ruby
@@ -54,7 +54,7 @@ parsed_time, parsed_timezone = Halo::Reach::Util::parse_timestamp(api_timestamp)
 ```
 
 ## Contributing to halo-reach-api
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -65,5 +65,5 @@ parsed_time, parsed_timezone = Halo::Reach::Util::parse_timestamp(api_timestamp)
 
 ## Copyright
 
-Copyright (c) 2010-2013 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2010-2014 David Czarnecki. See LICENSE.txt for further details.
 
